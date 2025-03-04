@@ -35,7 +35,7 @@ class EvalMatrixWorld(torch.autograd.Function):
     Call c++ function to evaluate matrix_world
     """
 
-    cdll = ctypes.CDLL(os.path.join(os.path.dirname(__file__), 'cpp_eval_bone_matrix/cpp_eval_bone_matrix.dll'))
+    cdll = ctypes.CDLL(os.path.join(os.path.dirname(__file__), 'cpp_eval_bone_matrix/cpp_eval_bone_matrix.so'))
     cpp_eval_matrix_world = cdll.eval_matrix_world
     cpp_grad_matrix_world = cdll.grad_matrix_world
 
